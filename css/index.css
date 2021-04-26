@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/*--- Variable ---*/
+:root{
+    --main-color: rgb(149,209,59);
+    --second-color: #769ef5;
+    --gray: rgb(240, 240, 240);
+}
+
+/*--- Style Globales ---*/
+
+.container{
+    padding: 0 35px;
+    margin: 0 auto;
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .container{
+        width: 750px;
+    }
+}
+@media (max-width: 767px){
+    .container{
+        width: auto;
+    }
+}
+
+
+/*--- Start Style Header ---*/
+header {
+    width: 100%;
+    background-color: var(--gray);
+    /* height: 614px; */
+    height: 100vh; 
+}
+header .container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .container h1{
+    color: var(--main-color);
+    text-align: center;
+    font-size: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -1px;
+}
+header .container h1 span{
+    color: var(--second-color);
+}
+
+@media (max-width:991px) {
+    header .container h1 {
+        font-size: 150px;
+    }
+}
+@media (max-width:767px) {
+    header .container h1 {
+        font-size: 95px;
+    }
+}
+/* 
+@media (min-width: 992px) and (max-width: 1199px){
+    header .container h1{
+        font-size: 200px
+    }
+}
+@media (min-width: 768px) and (max-width: 845px){
+    header .container h1{
+        font-size: 190px
+    }
+}
+@media (max-width: 767px){
+    header .container h1{
+        font-size: 180px
+    }
+}
+@media (max-width: 600px){
+    header .container h1{
+        font-size: 140px
+    }
+} */
+/*--- End Style Header ---*/
+
+/* Start Style Text Biogas */
+section.text-biogas {
+    background-color: var(--second-color);
+    /* padding-left: 100px ;  */
+    display: flex;
+    align-items: center;
+    /* overflow: hidden; */
+    flex-wrap: wrap;
+
+}
+section.text-biogas .container{
+    padding: 64px 0px;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    row-gap: 100px;
+    column-gap: 20px; */
+    /* align-items: center;
+    justify-content: center; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+section.text-biogas .text-b{
+    font-size: 70px;
+    font-weight: 300;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+
+    max-width: 500px;
+}
+section.text-biogas .text-b p span{
+    color: var(--main-color)
+}
+section.text-biogas img{
+    margin: auto;
+    height: 344px;
+    animation: img_ANI 3s  ease infinite;
+}
+
+@keyframes img_ANI {
+    0%,100%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+}
+
+
+@media (max-width: 992px){
+    section.text-biogas .container {
+        text-align: center;
+    }
+}
+
+/* End Style Text Biogas */
+
+/* Start Style Image Product */
+section.image-product{
+    
+    padding-top: 50px;
+}
+section.image-product .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(270px,1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-left: auto;
+    margin-right:auto ;
+   
+    
+}
+
+@media (max-width:350px) {
+    section.image-product .container {
+        margin-left: -10px;
+    }
+    
+}
+section.image-product .container .card{
+    height: 350px;
+    background-color: red;
+    position: relative;
+    overflow: hidden;
+    
+}
+section.image-product .container .card img{
+    width: 100%;
+    height: 100%;
+    transition: transform .7s;
+}
+section.image-product .container .card:hover::before{
+    top: 0;
+}
+section.image-product .container .card:hover img{
+    transform: scale(1.2);
+}
+section.image-product .container .card::before{
+    content: "Production de gaz sous 3 jours";
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(118, 158, 245,.9);
+    transition: .7s;
+    z-index: 99;
+}
+
+/* End Style Image Product */
+
+/* Start Style Footer */
+footer{
+    width: 100%;
+    margin-top: 100px;
+    padding: 10px 0;
+    background-color: black;
+}
+/* footer .container{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; 
+
+} */
+ul{
+    /* display: grid;
+    grid-template-columns: repeat(3,100px );
+    column-gap: 10px; */
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    display: inline;
+   
+}
+
+ul li a{
+    color: white;
+    transition: .5s;
+}
+ul li a:hover{
+    color: var(--main-color);
+}
+/* End Style Footer */
